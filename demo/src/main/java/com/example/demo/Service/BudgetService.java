@@ -22,7 +22,7 @@ public class BudgetService {
     }
     public Budget updateBudget(int id,Budget b)
     {
-        b.setbudgetid(id);
+        b.setBudgetid(id);
         return burepo.save(b);
     }
     public String deleteBudget(int id)

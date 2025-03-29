@@ -1,8 +1,6 @@
 package com.example.demo.Entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 @Entity
 public class Vendor {
     @Id
@@ -12,58 +10,47 @@ public class Vendor {
     private String services;
     private String contactInfo;
     private String pricing;
-    public Vendor()
-    {
+    @ManyToOne
+    @JoinColumn(name = "user_fk_id",referencedColumnName = "uid", nullable = false)
+    @JsonBackReference
+    private User user;
+    public int getVid() { 
+        return vid; 
+    }
+    public void setVid(int vid) { 
+        this.vid = vid; 
+    }
 
+    public String getName() { 
+        return name; 
     }
-    public Vendor(int vid,String name,String services,String contactInfo,String pricing)
-    {
-        this.vid=vid;
-        this.name=name;
-        this.services=services;
-        this.contactInfo=contactInfo;
-        this.pricing=pricing;
+    public void setName(String name) { 
+        this.name = name; 
     }
-    public int getvid()
-    {
-        return vid;
+
+    public String getServices() { 
+        return services; 
     }
-    public String getname()
-    {
-        return name;
+    public void setServices(String services) { 
+        this.services = services; 
     }
-    public String getservices()
-    {
-        return services;
+
+    public String getContactInfo() { return contactInfo; }
+    public void setContactInfo(String contactInfo) { 
+        this.contactInfo = contactInfo;
+     }
+
+    public String getPricing() { 
+        return pricing; 
     }
-    public String getcontactInfo()
-    {
-        return contactInfo;
+    public void setPricing(String pricing) { 
+        this.pricing = pricing; 
     }
-    public String getpricing()
-    {
-        return pricing;
+
+    public User getUser() {
+         return user; 
+        }
+    public void setUser(User user) { 
+        this.user = user; 
     }
-    public void setvid(int vid)
-    {
-        this.vid=vid;
-    }
-    public void setname(String name)
-    {
-        this.name=name;
-    }
-    public void setservices(String services)
-    {
-        this.services=services;
-    }
-    public void setcontactInfo(String contactInfo)
-    {
-        this.contactInfo=contactInfo;
-    }
-    public void setpricing(String pricing)
-    {
-        this.pricing=pricing;
-    }
-    
-    
 }

@@ -1,69 +1,106 @@
+// package com.example.demo.Entity;
+
+// import jakarta.persistence.*;
+
+// @Entity
+// public class Budget {
+//     @Id
+//     @GeneratedValue(strategy = GenerationType.IDENTITY)
+//     private int budgetid;
+//     private int totalbudget;
+//     private int spentamount;
+//     private int remainingamount;
+
+//     public Budget() {}
+
+//     public Budget(int totalbudget, int spentamount, int remainingamount) {
+//         this.totalbudget = totalbudget;
+//         this.spentamount = spentamount;
+//         this.remainingamount = remainingamount;
+//     }
+
+//     public int getBudgetid() {
+//         return budgetid;
+//     }
+
+//     public void setBudgetid(int budgetid) {
+//         this.budgetid = budgetid;
+//     }
+
+//     public int getTotalbudget() {
+//         return totalbudget;
+//     }
+
+//     public void setTotalbudget(int totalbudget) {
+//         this.totalbudget = totalbudget;
+//     }
+
+//     public int getSpentamount() {
+//         return spentamount;
+//     }
+
+//     public void setSpentamount(int spentamount) {
+//         this.spentamount = spentamount;
+//     }
+
+//     public int getRemainingamount() {
+//         return remainingamount;
+//     }
+
+//     public void setRemainingamount(int remainingamount) {
+//         this.remainingamount = remainingamount;
+//     }
+// }
 package com.example.demo.Entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
+
+import jakarta.persistence.*;
+
 @Entity
 public class Budget {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int budgetid;
-    private int eventid;
     private int totalbudget;
     private int spentamount;
     private int remainingamount;
-    public Budget()
-    {
 
+    public Budget() {}
+
+    public Budget(int totalbudget, int spentamount, int remainingamount) {
+        this.totalbudget = totalbudget;
+        this.spentamount = spentamount;
+        this.remainingamount = remainingamount;
     }
-    public Budget(int budgetid,int eventid,int totalbudget,int spentamount,int remainingamount)
-    {
-        this.budgetid=budgetid;
-        this.eventid=eventid;
-        this.totalbudget=totalbudget;
-        this.spentamount=spentamount;
-        this.remainingamount=remainingamount;
-    }
-    public int getbudgetid()
-    {
+
+    public int getBudgetid() {
         return budgetid;
     }
-    public int geteventid()
-    {
-        return eventid;
+
+    public void setBudgetid(int budgetid) {
+        this.budgetid = budgetid;
     }
-    public int gettotalbudget()
-    {
+
+    public int getTotalbudget() {
         return totalbudget;
     }
-    public int getspentamount()
-    {
+
+    public void setTotalbudget(int totalbudget) {
+        this.totalbudget = totalbudget;
+    }
+
+    public int getSpentamount() {
         return spentamount;
     }
-    public int getremainingamount()
-    {
-        return remainingamount;
-    } 
-    public void setbudgetid(int budgetid)
-    {
-        this.budgetid=budgetid;
-    }
-    public void seteventid(int eventid)
-    {
-        this.eventid=eventid;
-    }
-    public void settotalbudget(int totalbudget)
-    {
-        this.totalbudget=totalbudget;
-    }
-    public void setspentamount(int spentamount)
-    {
-        this.spentamount=spentamount;
-    }
-    public void setremainingamount(int remainingamount)
-    {
-        this.remainingamount=remainingamount;
-    }
-     
-}
 
+    public void setSpentamount(int spentamount) {
+        this.spentamount = spentamount;
+    }
+
+    public int getRemainingamount() {
+        return remainingamount;
+    }
+
+    public void setRemainingamount(int remainingamount) {
+        this.remainingamount = remainingamount;
+    }
+}

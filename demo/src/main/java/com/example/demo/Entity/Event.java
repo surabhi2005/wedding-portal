@@ -1,8 +1,5 @@
 package com.example.demo.Entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 @Entity
 public class Event {
     @Id
@@ -12,59 +9,66 @@ public class Event {
     private String dateofevent;
     private String location;
     private String mealtype;
-    public Event()
-    {
 
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "budget_id", referencedColumnName = "budgetid")
+    private Budget budget;
+
+    public Event() {}
+
+    public Event(String name, String dateofevent, String location, String mealtype, Budget budget) {
+        this.name = name;
+        this.dateofevent = dateofevent;
+        this.location = location;
+        this.mealtype = mealtype;
+        this.budget = budget;
     }
-    public Event(int id,String name,String dateofevent,String location,String mealtype)
-    {
-        this.id=id;
-        this.name=name;
-        this.dateofevent=dateofevent;
-        this.location=location;
-        this.mealtype=mealtype;
-    }
-    public int getid()
-    {
+
+    public int getId() {
         return id;
     }
-    public String getname()
-    {
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
         return name;
     }
-    public String getdateofevent()
-    {
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDateofevent() {
         return dateofevent;
     }
-    public String getlocation()
-    {
+
+    public void setDateofevent(String dateofevent) {
+        this.dateofevent = dateofevent;
+    }
+
+    public String getLocation() {
         return location;
     }
-    public String getmealtype()
-    {
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getMealtype() {
         return mealtype;
     }
-    public void setid(int id)
-    {
-        this.id=id;
-    }
-    public void setname(String name)
-    {
-        this.name=name;
-    }
-    public void setdateofevent(String dateofevent)
-    {
-        this.dateofevent=dateofevent;
-    }
-    public void setlocation(String location)
-    {
-        this.location=location;
-    }
-    public void setmealtype(String mealtype)
-    {
-        this.mealtype=mealtype;
-    }
-    
-    
-}
 
+    public void setMealtype(String mealtype) {
+        this.mealtype = mealtype;
+    }
+
+    public Budget getBudget() {
+        return budget;
+    }
+
+    public void setBudget(Budget budget) {
+        this.budget = budget;
+    }
+}
