@@ -1,33 +1,3 @@
-// package com.example.demo.Service;
-// import com.example.demo.Entity.Invitation;
-// import com.example.demo.Repository.InvitationRepository;
-// import java.util.List;
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
-// @Service
-// public class InvitationService{
-//     @Autowired
-//     private InvitationRepository irepo;
-//     public Invitation addinvi(Invitation i)
-//     {
-//         return irepo.save(i);
-//     }
-//     public List<Invitation> getinvitation()
-//     {
-//         return irepo.findAll();
-//     }
-//     public Invitation updateinvitation(int id,Invitation i)
-//     {
-//         i.setinvid(id);
-//         return irepo.save(i);
-//     }
-//     public String deleteinvi(int invid)
-//     {
-//         irepo.deleteById(invid);
-//         return "Successfully deleted";
-//     }
-    
-// }
 package com.example.demo.Service;
 
 import com.example.demo.Entity.Invitation;

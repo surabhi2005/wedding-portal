@@ -1,33 +1,3 @@
-// package com.example.demo.Service;
-// import com.example.demo.Entity.Guest;
-// import com.example.demo.Repository.GuestRepository;
-// import java.util.List;
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
-// @Service
-// public class GuestService {
-//     @Autowired
-//     private GuestRepository grepo;
-//     public Guest addguest(Guest g)
-//     {
-//         return grepo.save(g);
-//     }
-//     public List<Guest> getguest()
-//     {
-//         return grepo.findAll();
-//     }
-//     public Guest updateguest(int id,Guest g)
-//     {
-//         g.setguestid(id);
-//         return grepo.save(g);
-//     }
-//     public String deleteguest(int guestid)
-//     {
-//         grepo.deleteById(guestid);
-//         return "Successfully deleted";
-//     }
-    
-// }
 package com.example.demo.Service;
 
 import com.example.demo.Entity.Guest;
